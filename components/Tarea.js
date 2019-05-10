@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View, Text, StyleSheet, TouchableOpacity,
+} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 class Tarea extends Component {
   constructor(props) {
@@ -12,6 +15,9 @@ class Tarea extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.texto}>{this.props.item.texto}</Text>
+        <TouchableOpacity onPress={() => { this.props.eliminar(this.props.item.key); }}>
+          <Ionicons name="md-trash" size={24} color="gray" />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -20,9 +26,11 @@ class Tarea extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
   },
   texto: {
-    flex: 1,
     fontSize: 24,
   },
 });

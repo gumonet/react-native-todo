@@ -7,7 +7,6 @@ class Header extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Header</Text>
         <TextInput
           style={styles.inputStyle}
           placeholder=" Ingresa tu texto "
@@ -19,7 +18,6 @@ class Header extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 2,
@@ -28,8 +26,6 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     paddingHorizontal: 16,
-    borderColor: 'gray',
-    borderWidth: 1,
     fontSize: 24,
   },
 });
